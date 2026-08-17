@@ -40,7 +40,11 @@
           <li><a href="#projekt">Projekt</a></li>
           <li><a href="#om">Om mig</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
-          <li><a href="#cv">CV</a></li>
+          <li>
+            <a href="/documents/alexander-johansson-cv.pdf" target="_blank" rel="noopener">
+              CV
+            </a>
+          </li>
         </ul>
       </nav>
 
@@ -80,14 +84,58 @@
           <li><a href="#projekt">Projekt</a></li>
           <li><a href="#om">Om mig</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
-          <li><a href="#cv">CV</a></li>
+          <li>
+            <a href="%BASE_URL%documents/alexander-johansson-cv.pdf" target="_blank" rel="noopener">
+              CV
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
   </header>
 
   <main id="main-content">
-    <!-- Page content -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1 id="hero-title" class="hero__title">
+            Alexander
+            <span>Johansson</span>
+          </h1>
+
+          <p class="hero__role">
+            Frontend-utvecklare
+          </p>
+
+          <p class="hero__intro">
+            Tio år i säljbranschen lärde mig att förstå människor. Nu tar jag med mig det perspektivet in i frontend.
+          </p>
+
+          <div class="hero__actions">
+            <a class="button button--primary" href="#projekt">
+              Se projekten
+
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+
+            <a class="button button--secondary" href="/documents/alexander-johansson-cv.pdf" target="_blank"
+              rel="noopener">
+              Visa CV
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__portrait">
+          <img src="/src/assets/images/alexander-johansson-hero.webp"
+            alt="Porträtt av Alexander Johansson with a cup of coffee" width="800" height="1000" fetchpriority="high" />
+
+          <span class="hero__accent" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script type="module" src="/src/main.ts"></script>
