@@ -11,6 +11,16 @@
 
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" />
+
+  <!-- Apply saved/system theme before rendering to prevent a color flash. -->
+  <script>
+    const savedTheme = localStorage.getItem('theme')
+    const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+    if (savedTheme === 'dark' || (!savedTheme && prefersDarkTheme)) {
+      document.documentElement.dataset.theme = 'dark'
+    }
+  </script>
 </head>
 
 <body id="top">
@@ -35,6 +45,21 @@
       </nav>
 
       <div class="site-header__actions">
+
+        <button type="button" class="theme-toggle" aria-label="Byt till mörkt tema">
+          <svg class="theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.75" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79Z" />
+          </svg>
+
+          <svg class="theme-toggle__sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.75" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2V4M12 20V22M4.93 4.93L6.34 6.34M17.66 17.66L19.07 19.07M2 12H4M20 12H22M4.93 19.07L6.34 17.66M17.66 6.34L19.07 4.93" />
+          </svg>
+        </button>
+
         <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-navigation">
           <svg class="menu-toggle__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="1.5" aria-hidden="true">

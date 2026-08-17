@@ -33,12 +33,6 @@
 	}
 }
 
-@media (hover: hover) and (pointer: fine) {
-	.site-nav__list a:hover {
-		color: var(--color-text);
-	}
-}
-
 .site-header__logo {
 	display: grid;
 	place-items: center;
@@ -63,12 +57,15 @@
 .site-header__actions {
 	display: flex;
 	align-items: center;
+	gap: var(--space-2);
 }
 
 .site-nav {
 	display: none;
 }
 
+// Toggle light and dark mode
+.theme-toggle,
 .menu-toggle {
 	display: grid;
 	place-items: center;
@@ -82,6 +79,21 @@
 	color: var(--color-text);
 }
 
+.theme-toggle__sun {
+	display: none;
+}
+
+[data-theme='dark'] {
+	.theme-toggle__moon {
+		display: none;
+	}
+
+	.theme-toggle__sun {
+		display: block;
+	}
+}
+
+// Mobile menu toggle
 .menu-toggle__close-icon {
 	display: none;
 }
@@ -92,7 +104,7 @@
 	}
 
 	.menu-toggle__close-icon {
-		display: block; 
+		display: block;
 	}
 }
 
@@ -124,7 +136,6 @@
 
 .mobile-nav__list a {
 	display: inline-block;
-
 	padding: var(--space-2);
 
 	font-family: var(--font-display);
@@ -137,6 +148,11 @@
 	}
 }
 
+body.menu-open {
+	overflow: hidden;
+}
+
+// Desktop navigation
 @media (min-width: 48rem) {
 	.site-header__name {
 		display: inline;
@@ -176,8 +192,13 @@
 	}
 }
 
+// Hover states for devices with a precise pointer
 @media (hover: hover) and (pointer: fine) {
 	.site-nav__list a:hover {
 		color: var(--color-text);
+	}
+
+	.mobile-nav__list a:hover {
+		color: var(--color-accent);
 	}
 }
