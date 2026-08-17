@@ -1,0 +1,39 @@
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-2);
+
+	min-height: 2.75rem;
+	padding: var(--space-3) var(--space-5);
+
+	border: 1px solid transparent;
+
+	font-size: 0.875rem;
+	font-weight: 600;
+	line-height: 1;
+	text-decoration: none;
+}
+
+.button--primary {
+	background-color: var(--color-text);
+	color: var(--color-background);
+}
+
+.button--secondary {
+	border-color: var(--color-border);
+
+	background-color: transparent;
+	color: var(--color-text);
+}
+
+// Hover states for devices with a precise pointer
+@media (hover: hover) and (pointer: fine) {
+	.button--primary:hover {
+		opacity: 0.8;
+	}
+
+	.button--secondary:hover {
+		border-color: var(--color-text);
+	}
+}
