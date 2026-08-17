@@ -13,8 +13,57 @@
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" />
 </head>
 
-<body>
-  <div id="app"></div>
+<body id="top">
+  <a class="skip-link" href="#main-content">
+    Hoppa till huvudinnehåll
+  </a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__brand" href="#top" aria-label="Alexander Johansson, startsida">
+        <span class="site-header__logo" aria-hidden="true">AJ</span>
+        <span class="site-header__name">Alexander Johansson</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Huvudnavigation">
+        <ul class="site-nav__list">
+          <li><a href="#projekt">Projekt</a></li>
+          <li><a href="#om">Om mig</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="#cv">CV</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-navigation">
+          <svg class="menu-toggle__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.5" aria-hidden="true">
+            <path class="menu-toggle__open-icon" d="M3 6h18M3 12h18M3 18h18" />
+            <path class="menu-toggle__close-icon" d="M6 6l12 12M18 6L6 18" />
+          </svg>
+
+          <span class="visually-hidden menu-toggle__label">
+            Öppna meny
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-navigation" class="mobile-nav" aria-label="Mobilnavigation" hidden>
+      <div class="container mobile-nav__inner">
+        <ul class="mobile-nav__list">
+          <li><a href="#projekt">Projekt</a></li>
+          <li><a href="#om">Om mig</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="#cv">CV</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- Page content -->
+  </main>
 
   <script type="module" src="/src/main.ts"></script>
 </body>

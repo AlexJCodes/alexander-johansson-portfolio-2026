@@ -44,10 +44,14 @@
 	--space-8: 4rem;
 	--space-9: 6rem;
 
+	// Border radius
+	--radius-focus: 0.25rem;
+
 	// Layout
-    --container-max: 80rem;
-    --page-padding: clamp(1.25rem, 0.75rem + 2vw, 2.5rem);
-    --section-spacing: clamp(5rem, 3rem + 5vw, 7rem);
+	--container-max: 80rem;
+	--header-height: 4rem;
+	--page-padding: clamp(1.25rem, 0.75rem + 2vw, 2.5rem);
+	--section-spacing: clamp(5rem, 3rem + 5vw, 7rem);
 }
 
 [data-theme='dark'] {
