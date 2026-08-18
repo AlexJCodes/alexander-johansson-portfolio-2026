@@ -136,6 +136,40 @@
         </div>
       </div>
     </section>
+
+    <section id="projekt" class="projects section" aria-labelledby="projects-title">
+      <div class="container projects__header">
+        <div>
+          <p class="projects__eyebrow">Utvalda projekt</p>
+
+          <h2 id="projects-title" class="projects__title">
+            Vad jag byggt
+          </h2>
+        </div>
+      </div>
+
+      <div class="projects__carousel">
+        <button class="projects__control projects__control--previous" type="button" data-project-direction="previous"
+          aria-label="Föregående projekt" aria-controls="projects-track">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <ul id="projects-track" class="projects__track">
+          <!-- Project cards are rendered from project data -->
+        </ul>
+
+        <button class="projects__control projects__control--next" type="button" data-project-direction="next"
+          aria-label="Nästa projekt" aria-controls="projects-track">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </section>
   </main>
 
   <script type="module" src="/src/main.ts"></script>
