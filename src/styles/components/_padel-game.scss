@@ -1,4 +1,6 @@
 .padel-game {
+    box-sizing: border-box;
+
 	width: min(calc(100% - (var(--page-padding) * 2)), 48rem);
 	max-height: calc(100dvh - (var(--page-padding) * 2));
 	padding: 0;
@@ -17,6 +19,7 @@
 
 .padel-game__inner {
 	position: relative;
+    box-sizing: border-box;
 
 	min-height: 34rem;
 	padding: var(--space-7);
@@ -286,18 +289,22 @@
 
 // Mobile
 
+// Mobile
+
 @media (max-width: 39.99rem) {
 	.padel-game {
 		width: 100%;
 		max-width: none;
 		height: 100dvh;
-		max-height: none;
+		max-height: 100dvh;
+		margin: 0;
 
 		border: 0;
 	}
 
 	.padel-game__inner {
-		min-height: 100%;
+		height: 100dvh;
+		min-height: 0;
 		padding:
 			calc(var(--space-8) + env(safe-area-inset-top))
 			var(--page-padding)
@@ -305,10 +312,16 @@
 	}
 
 	.padel-game__screen {
-		min-height: 100%;
+		height: 100%;
+		min-height: 0;
+	}
+
+	.padel-game__screen--game {
+		min-height: 0;
 	}
 
 	.padel-game__arena {
+		flex: 1 1 auto;
 		min-height: 0;
 	}
 
