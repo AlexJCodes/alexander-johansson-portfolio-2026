@@ -1,0 +1,155 @@
+.padel-game__screen--challenge {
+	width: min(100%, 40rem);
+	justify-content: center;
+}
+
+.padel-game__challenge-description {
+	max-width: 34rem;
+	margin-top: var(--space-3);
+	color: var(--color-text-muted);
+	font-size: 1.125rem;
+	line-height: 1.6;
+}
+
+.padel-game__form {
+	display: grid;
+	gap: 1.25rem;
+	width: 100%;
+	max-width: 34rem;
+	margin-top: var(--space-5);
+}
+
+.padel-game__field {
+	display: grid;
+	gap: 0.5rem;
+
+	label {
+		font-size: 0.9rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+}
+
+.padel-game__required {
+	color: var(--color-accent);
+}
+
+.padel-game__optional {
+	margin-left: 0.35rem;
+	color: var(--color-text-muted);
+	font-size: 0.75rem;
+	font-weight: 400;
+}
+
+.padel-game__field input,
+.padel-game__field textarea {
+	width: 100%;
+	border: 1px solid var(--color-border);
+	border-radius: 0.65rem;
+	background-color: var(--color-surface);
+	color: var(--color-text);
+	font: inherit;
+	transition:
+		border-color 150ms ease,
+		background-color 150ms ease;
+}
+
+.padel-game__field input {
+	min-height: 3.5rem;
+	padding-inline: 1rem;
+}
+
+.padel-game__field textarea {
+	min-height: 8.5rem;
+	padding: 1rem;
+	resize: vertical;
+	line-height: 1.5;
+}
+
+.padel-game__field input::placeholder,
+.padel-game__field textarea::placeholder {
+	color: var(--color-text-muted);
+	opacity: 0.7;
+}
+
+.padel-game__field input:user-invalid,
+.padel-game__field textarea:user-invalid {
+	border-color: var(--color-accent);
+}
+
+.padel-game__submit {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.6rem;
+	width: fit-content;
+	min-height: 3.25rem;
+	margin-top: 0.5rem;
+	padding-inline: 1.25rem;
+	border: 0;
+	border-radius: 0.65rem;
+	background-color: var(--color-text);
+	color: var(--color-background);
+	font: inherit;
+	font-weight: 600;
+	cursor: pointer;
+	transition:
+		background-color 150ms ease,
+		transform 150ms ease;
+
+	span {
+		transition: transform 150ms ease;
+	}
+
+	&:disabled {
+		cursor: wait;
+		opacity: 0.6;
+	}
+}
+
+.padel-game__form-success,
+.padel-game__form-error {
+	max-width: 34rem;
+	margin-top: var(--space-4);
+	padding: 1rem 1.25rem;
+	border-left: 3px solid var(--color-accent);
+	background-color: var(--color-surface);
+	line-height: 1.5;
+}
+
+.padel-game__form-error {
+	color: var(--color-accent);
+}
+
+.padel-game__honeypot {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.padel-game__submit:not(:disabled):hover {
+		background-color: var(--color-accent);
+
+		span {
+			transform: translateX(0.2rem);
+		}
+	}
+}
+
+@media (max-width: 39.99rem) {
+	.padel-game__screen--challenge {
+		justify-content: flex-start;
+	}
+
+	.padel-game__form {
+		max-width: none;
+	}
+
+	.padel-game__submit {
+		width: 100%;
+	}
+}

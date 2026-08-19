@@ -1,0 +1,331 @@
+.padel-game {
+	width: min(calc(100% - (var(--page-padding) * 2)), 48rem);
+	max-height: calc(100dvh - (var(--page-padding) * 2));
+	padding: 0;
+
+	overflow: hidden;
+
+	border: 1px solid var(--color-border);
+	background-color: var(--color-background);
+	color: var(--color-text);
+}
+
+.padel-game::backdrop {
+	background-color: rgb(0 0 0 / 55%);
+	backdrop-filter: blur(4px);
+}
+
+.padel-game__inner {
+	position: relative;
+
+	min-height: 34rem;
+	padding: var(--space-7);
+}
+
+.padel-game__screen {
+	display: flex;
+	min-height: 28rem;
+	flex-direction: column;
+}
+
+.padel-game__screen[hidden] {
+	display: none;
+}
+
+// Close button
+
+.padel-game__close {
+	position: absolute;
+	z-index: 2;
+	top: var(--space-4);
+	right: var(--space-4);
+}
+
+.padel-game__close-button {
+	display: grid;
+	width: 2.75rem;
+	aspect-ratio: 1;
+	padding: 0;
+
+	border: 1px solid var(--color-border);
+	background-color: transparent;
+	color: var(--color-text);
+
+	place-items: center;
+}
+
+.padel-game__close-button svg {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+
+// Intro
+
+.padel-game__screen--intro {
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.padel-game__eyebrow {
+	margin-bottom: var(--space-3);
+
+	color: var(--color-text-muted);
+
+	font-size: var(--font-size-small);
+	font-weight: 600;
+	letter-spacing: var(--letter-spacing-label);
+	text-transform: uppercase;
+}
+
+.padel-game__title {
+	max-width: 10ch;
+
+	font-size: var(--font-size-section-title);
+	line-height: var(--line-height-heading);
+	letter-spacing: -0.02em;
+}
+
+.padel-game__intro {
+	max-width: 30rem;
+	margin-top: var(--space-5);
+
+	color: var(--color-text-muted);
+
+	font-size: var(--font-size-large);
+	line-height: var(--line-height-body);
+}
+
+.padel-game__start {
+	margin-top: var(--space-6);
+	padding: 0.875rem 1.25rem;
+
+	border: 1px solid var(--color-text);
+	background-color: var(--color-text);
+	color: var(--color-background);
+
+	font-weight: 600;
+}
+
+// Game
+
+.padel-game__screen--game {
+	gap: var(--space-4);
+}
+
+.padel-game__status {
+	padding-right: 3.5rem;
+
+	color: var(--color-text-muted);
+
+	font-size: var(--font-size-small);
+	font-weight: 600;
+	letter-spacing: var(--letter-spacing-label);
+	text-transform: uppercase;
+}
+
+.padel-game__arena {
+	position: relative;
+
+	flex: 1;
+	min-height: 24rem;
+	overflow: hidden;
+
+	border: 1px solid var(--color-border);
+	background-color: var(--color-surface);
+}
+
+// Ball position will be controlled by TypeScript
+.padel-game__ball {
+	--ball-x: 50%;
+	--ball-y: 50%;
+
+	position: absolute;
+	top: var(--ball-y);
+	left: var(--ball-x);
+
+	width: 3.25rem;
+	aspect-ratio: 1;
+	padding: 0;
+	overflow: hidden;
+
+	border: 0;
+	border-radius: 50%;
+
+	background:
+		radial-gradient(
+			circle at 30% 25%,
+			rgb(255 255 255 / 28%),
+			transparent 35%
+		),
+		#d7ef43;
+
+	box-shadow:
+		0 0 0 0.25rem rgb(215 239 67 / 14%),
+		0 0.5rem 1.5rem rgb(0 0 0 / 18%);
+
+	transform: translate(-50%, -50%);
+}
+
+.padel-game__ball::before,
+.padel-game__ball::after {
+	position: absolute;
+
+	width: 80%;
+	height: 115%;
+
+	border: 0.12rem solid rgb(255 255 255 / 88%);
+	border-radius: 50%;
+
+	content: "";
+}
+
+.padel-game__ball::before {
+	top: -8%;
+	left: -53%;
+}
+
+.padel-game__ball::after {
+	top: -8%;
+	right: -53%;
+}
+
+.padel-game__ball[hidden] {
+	display: none;
+}
+
+// Result
+
+.padel-game__screen--result {
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.padel-game__result-time {
+	display: flex;
+	gap: var(--space-2);
+	align-items: baseline;
+
+	margin-bottom: var(--space-5);
+
+	font-family: var(--font-display);
+	font-size: clamp(4rem, 3rem + 5vw, 7rem);
+	line-height: 0.9;
+	letter-spacing: -0.04em;
+}
+
+.padel-game__result-time span:last-child {
+	color: var(--color-text-muted);
+
+	font-family: var(--font-body);
+	font-size: var(--font-size-large);
+	font-weight: 400;
+	letter-spacing: 0;
+}
+
+.padel-game__result-title {
+	max-width: 12ch;
+
+	font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+	line-height: var(--line-height-heading);
+}
+
+.padel-game__result-text {
+	margin-top: var(--space-3);
+
+	color: var(--color-text-muted);
+
+	font-size: var(--font-size-large);
+}
+
+.padel-game__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-3);
+
+	margin-top: var(--space-6);
+}
+
+.padel-game__restart,
+.padel-game__challenge-link {
+	display: inline-flex;
+	min-height: 2.75rem;
+	padding: 0.75rem 1rem;
+	align-items: center;
+	justify-content: center;
+
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.padel-game__restart {
+	border: 1px solid var(--color-border);
+	background-color: transparent;
+	color: var(--color-text);
+}
+
+.padel-game__challenge-link {
+	gap: var(--space-2);
+
+	border: 1px solid var(--color-text);
+	background-color: var(--color-text);
+	color: var(--color-background);
+}
+
+// Hover states
+
+@media (hover: hover) and (pointer: fine) {
+	.padel-game__close-button:hover,
+	.padel-game__restart:hover {
+		border-color: var(--color-text);
+	}
+
+	.padel-game__ball:hover {
+		transform: translate(-50%, -50%) scale(1.08);
+	}
+}
+
+// Mobile
+
+@media (max-width: 39.99rem) {
+	.padel-game {
+		width: 100%;
+		max-width: none;
+		height: 100dvh;
+		max-height: none;
+
+		border: 0;
+	}
+
+	.padel-game__inner {
+		min-height: 100%;
+		padding:
+			calc(var(--space-8) + env(safe-area-inset-top))
+			var(--page-padding)
+			calc(var(--space-6) + env(safe-area-inset-bottom));
+	}
+
+	.padel-game__screen {
+		min-height: 100%;
+	}
+
+	.padel-game__arena {
+		min-height: 0;
+	}
+
+	.padel-game__close {
+		top: calc(var(--space-4) + env(safe-area-inset-top));
+		right: var(--page-padding);
+	}
+}
+
+// Reduced motion
+
+@media (prefers-reduced-motion: reduce) {
+	.padel-game::backdrop {
+		backdrop-filter: none;
+	}
+
+	.padel-game__ball {
+		transition: none;
+	}
+}

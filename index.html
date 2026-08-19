@@ -297,9 +297,17 @@
               <p class="personal-card__label">Padel</p>
 
               <p class="personal-card__description">
-                Spelar oftare än jag borde. Om du besegrar mig
-                bjuder jag på fika.
+                Spelar oftare än jag borde. Om du besegrar mig bjuder jag på fika.
               </p>
+
+              <div class="personal-card__challenge-copy">
+                <p>Är du en värdig motståndare? Testa din reaktion.</p>
+
+                <button class="personal-card__challenge" type="button" data-padel-game-open>
+                  Testa här
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
             </div>
           </article>
 
@@ -345,6 +353,166 @@
         </div>
       </div>
     </section>
+
+    <dialog id="padel-game" class="padel-game" aria-labelledby="padel-game-title"
+      aria-describedby="padel-game-description">
+      <div class="padel-game__inner">
+        <form method="dialog" class="padel-game__close">
+          <button type="submit" class="padel-game__close-button" aria-label="Stäng Padel Challenge">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" />
+            </svg>
+          </button>
+        </form>
+
+        <!-- Intro -->
+        <div class="padel-game__screen padel-game__screen--intro" data-padel-screen="intro">
+          <p class="padel-game__eyebrow">
+            Padel Challenge
+          </p>
+
+          <h2 id="padel-game-title" class="padel-game__title">
+            Redo att testa reaktionen?
+          </h2>
+
+          <p id="padel-game-description" class="padel-game__intro">
+            Fem bollar. Så snabbt du kan. Vi ser om du
+            är redo för en riktig match.
+          </p>
+
+          <button class="padel-game__start" type="button" data-padel-start>
+            Starta utmaningen
+          </button>
+        </div>
+
+        <!-- Game -->
+        <div class="padel-game__screen padel-game__screen--game" data-padel-screen="game" hidden>
+          <div class="padel-game__status">
+            <p>
+              Träff
+              <span data-padel-current>1</span>
+              /
+              <span data-padel-total>5</span>
+            </p>
+          </div>
+
+          <div class="padel-game__arena" data-padel-arena>
+            <button class="padel-game__ball" type="button" data-padel-ball aria-label="Träffa padelbollen"
+              hidden></button>
+          </div>
+
+          <p class="visually-hidden" aria-live="polite" data-padel-status></p>
+        </div>
+
+        <!-- Result -->
+        <div class="padel-game__screen padel-game__screen--result" data-padel-screen="result" hidden>
+          <p class="padel-game__eyebrow">
+            Resultat
+          </p>
+
+          <p class="padel-game__result-time">
+            <span data-padel-result>0,00</span>
+            <span>s</span>
+          </p>
+
+          <h2 class="padel-game__result-title" data-padel-result-title>
+            Okej… det där var faktiskt bra.
+          </h2>
+
+          <p class="padel-game__result-text" data-padel-result-text>
+            Min högst ovetenskapliga bedömning: MATCHi 6/10.
+          </p>
+
+          <p class="padel-game__result-challenge">
+            Vågar du utmana mig på riktigt?
+          </p>
+
+          <div class="padel-game__actions">
+            <button class="padel-game__restart" type="button" data-padel-restart>
+              Kör igen
+            </button>
+
+            <button class="padel-game__challenge-link" type="button" data-padel-challenge-open>
+              Utmana Alex
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Challenge form -->
+        <div class="padel-game__screen padel-game__screen--challenge" data-padel-screen="challenge" hidden>
+          <p class="padel-game__eyebrow">
+            Padel Challenge
+          </p>
+
+          <h2 class="padel-game__result-title">
+            Är du säker?
+          </h2>
+
+          <p class="padel-game__challenge-description">
+            Lämna dina uppgifter så skickas utmaningen direkt till Alex.
+          </p>
+
+          <div class="padel-game__form-success" data-fs-success role="status" aria-live="polite" hidden>
+            Utmaningen är skickad. Alex har nu två alternativ:
+            svara eller börja träna.
+          </div>
+
+          <div class="padel-game__form-error" data-fs-error role="alert" hidden></div>
+
+          <form id="padel-challenge-form" class="padel-game__form">
+            <div class="padel-game__field">
+              <label for="padel-name">
+                Namn
+                <span class="padel-game__required" aria-hidden="true">*</span>
+              </label>
+
+              <input id="padel-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80"
+                required />
+            </div>
+
+            <div class="padel-game__field">
+              <label for="padel-email">
+                E-post
+                <span class="padel-game__required" aria-hidden="true">*</span>
+              </label>
+
+              <input id="padel-email" name="email" type="email" autocomplete="email" maxlength="254" required />
+            </div>
+
+            <div class="padel-game__field">
+              <label for="padel-message">
+                Något du vill säga innan matchen?
+                <span class="padel-game__optional">
+                  Valfritt
+                </span>
+              </label>
+
+              <textarea id="padel-message" name="message" rows="4" maxlength="500"
+                placeholder="Trash talk, matchförslag eller en riktigt bra ursäkt…"></textarea>
+            </div>
+
+            <div class="padel-game__honeypot" aria-hidden="true">
+              <label for="padel-website">
+                Lämna detta fält tomt
+              </label>
+
+              <input id="padel-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <input type="hidden" name="reactionTime" data-padel-form-time />
+
+            <input type="hidden" name="matchiRating" data-padel-form-rating />
+
+            <button class="padel-game__submit" type="submit" data-fs-submit-btn>
+              Skicka utmaningen
+              <span aria-hidden="true">→</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </dialog>
 
   </main>
 
