@@ -142,15 +142,65 @@
 
 @media (max-width: 39.99rem) {
 	.padel-game__screen--challenge {
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
 		justify-content: flex-start;
-        overflow-y: auto;
+		overflow-y: auto;
+	}
+
+	.padel-game__screen--challenge .padel-game__eyebrow {
+		margin-bottom: var(--space-2);
+	}
+
+	.padel-game__screen--challenge .padel-game__result-title {
+		font-size: 2.25rem;
+	}
+
+	.padel-game__challenge-description {
+		margin-top: var(--space-2);
+
+		font-size: 1rem;
+		line-height: 1.5;
 	}
 
 	.padel-game__form {
-		max-width: none;
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+		gap: 0.85rem;
+
+		margin-top: var(--space-4);
+	}
+
+	.padel-game__field {
+		width: 100%;
+		min-width: 0;
+		gap: 0.35rem;
+	}
+
+	.padel-game__field input,
+	.padel-game__field textarea {
+		box-sizing: border-box;
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+	}
+
+	.padel-game__field input {
+		min-height: 3rem;
+	}
+
+	.padel-game__field textarea {
+		min-height: 5rem;
+		padding: 0.75rem 1rem;
+
+		resize: none;
 	}
 
 	.padel-game__submit {
 		width: 100%;
+		min-height: 3rem;
+		margin-top: 0.15rem;
 	}
 }
