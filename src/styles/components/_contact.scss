@@ -1,0 +1,103 @@
+.contact {
+	background-color: var(--color-background);
+}
+
+.contact__content {
+	max-width: 54rem;
+}
+
+.contact__eyebrow {
+	margin-bottom: var(--space-3);
+
+	color: var(--color-text-muted);
+
+	font-size: var(--font-size-small);
+	font-weight: 600;
+	letter-spacing: var(--letter-spacing-label);
+	text-transform: uppercase;
+}
+
+.contact__title {
+	font-size: clamp(4rem, 3rem + 5vw, 7.5rem);
+	line-height: 0.9;
+	letter-spacing: -0.04em;
+}
+
+.contact__text {
+	max-width: 36rem;
+	margin-top: var(--space-5);
+
+	color: var(--color-text-muted);
+
+	font-size: var(--font-size-large);
+	line-height: var(--line-height-body);
+}
+
+.contact__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-3);
+
+	margin-top: var(--space-7);
+}
+
+.contact__button {
+	display: inline-flex;
+	min-height: 3rem;
+	padding: 0.75rem 1rem;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-2);
+
+	border: 1px solid var(--color-border);
+	background-color: transparent;
+	color: var(--color-text);
+
+	font-weight: 600;
+	text-decoration: none;
+
+	transition:
+		border-color 150ms ease,
+		background-color 150ms ease,
+		color 150ms ease;
+}
+
+.contact__button--primary {
+	border-color: var(--color-text);
+	background-color: var(--color-text);
+	color: var(--color-background);
+}
+
+.contact__button--download svg {
+	transition: transform 150ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.contact__button:not(.contact__button--primary):hover {
+		border-color: var(--color-text);
+	}
+
+	.contact__button--primary:hover {
+		border-color: var(--color-accent);
+		background-color: var(--color-accent);
+	}
+
+	.contact__button--download:hover svg {
+		transform: translateY(0.125rem);
+	}
+}
+
+@media (max-width: 39.99rem) {
+	.contact__title {
+		font-size: clamp(3.75rem, 18vw, 5.5rem);
+	}
+
+	.contact__actions {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+
+	.contact__button {
+		width: 100%;
+	}
+}

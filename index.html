@@ -354,167 +354,228 @@
       </div>
     </section>
 
-    <dialog id="padel-game" class="padel-game" aria-labelledby="padel-game-title"
-      aria-describedby="padel-game-description">
-      <div class="padel-game__inner">
-        <form method="dialog" class="padel-game__close">
-          <button type="submit" class="padel-game__close-button" aria-label="Stäng Padel Challenge">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.5"
-                stroke-linecap="round" />
-            </svg>
-          </button>
-        </form>
-
-        <!-- Intro -->
-        <div class="padel-game__screen padel-game__screen--intro" data-padel-screen="intro">
-          <p class="padel-game__eyebrow">
-            Padel Challenge
+    <section id="kontakt" class="contact section" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact__content">
+          <p class="contact__eyebrow">
+            Kontakt
           </p>
 
-          <h2 id="padel-game-title" class="padel-game__title">
-            Redo att testa reaktionen?
+          <h2 id="contact-title" class="contact__title">
+            Säg hej.
           </h2>
 
-          <p id="padel-game-description" class="padel-game__intro">
-            Fem bollar. Så snabbt du kan. Vi ser om du
-            är redo för en riktig match.
+          <p class="contact__text">
+            Öppen för LIA-samtal, samarbeten och padelutmaningar.
+            Säg hej — jag svarar.
           </p>
 
-          <button class="padel-game__start" type="button" data-padel-start>
-            Starta utmaningen
-          </button>
-        </div>
+          <div class="contact__actions">
+            <a class="contact__button contact__button--primary" href="mailto:DIN-EMAIL">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
 
-        <!-- Game -->
-        <div class="padel-game__screen padel-game__screen--game" data-padel-screen="game" hidden>
-          <div class="padel-game__status">
-            <p>
-              Träff
-              <span data-padel-current>1</span>
-              /
-              <span data-padel-total>5</span>
-            </p>
+              Skicka mejl
+            </a>
+
+            <a class="contact__button" href="DIN-LINKEDIN" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+
+            <a class="contact__button" href="https://github.com/AlexJCodes" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+
+            <a class="contact__button contact__button--download" href="/documents/alexander-johansson-cv.pdf" download>
+              Ladda ned CV
+
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path d="M12 3v12" />
+                <path d="m7 10 5 5 5-5" />
+                <path d="M5 21h14" />
+              </svg>
+            </a>
           </div>
-
-          <div class="padel-game__arena" data-padel-arena>
-            <button class="padel-game__ball" type="button" data-padel-ball aria-label="Träffa padelbollen"
-              hidden></button>
-          </div>
-
-          <p class="visually-hidden" aria-live="polite" data-padel-status></p>
-        </div>
-
-        <!-- Result -->
-        <div class="padel-game__screen padel-game__screen--result" data-padel-screen="result" hidden>
-          <p class="padel-game__eyebrow">
-            Resultat
-          </p>
-
-          <p class="padel-game__result-time">
-            <span data-padel-result>0,00</span>
-            <span>s</span>
-          </p>
-
-          <h2 class="padel-game__result-title" data-padel-result-title>
-            Okej… det där var faktiskt bra.
-          </h2>
-
-          <p class="padel-game__result-text" data-padel-result-text>
-            Min högst ovetenskapliga bedömning: MATCHi 6/10.
-          </p>
-
-          <p class="padel-game__result-challenge">
-            Vågar du utmana mig på riktigt?
-          </p>
-
-          <div class="padel-game__actions">
-            <button class="padel-game__restart" type="button" data-padel-restart>
-              Kör igen
-            </button>
-
-            <button class="padel-game__challenge-link" type="button" data-padel-challenge-open>
-              Utmana Alex
-              <span aria-hidden="true">→</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Challenge form -->
-        <div class="padel-game__screen padel-game__screen--challenge" data-padel-screen="challenge" hidden>
-          <p class="padel-game__eyebrow">
-            Padel Challenge
-          </p>
-
-          <h2 class="padel-game__result-title">
-            Är du säker?
-          </h2>
-
-          <p class="padel-game__challenge-description">
-            Lämna dina uppgifter så skickas utmaningen direkt till Alex.
-          </p>
-
-          <div class="padel-game__form-success" data-fs-success role="status" aria-live="polite" hidden>
-            Utmaningen är skickad. Alex har nu två alternativ:
-            svara eller börja träna.
-          </div>
-
-          <div class="padel-game__form-error" data-fs-error role="alert" hidden></div>
-
-          <form id="padel-challenge-form" class="padel-game__form">
-            <div class="padel-game__field">
-              <label for="padel-name">
-                Namn
-                <span class="padel-game__required" aria-hidden="true">*</span>
-              </label>
-
-              <input id="padel-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80"
-                required />
-            </div>
-
-            <div class="padel-game__field">
-              <label for="padel-email">
-                E-post
-                <span class="padel-game__required" aria-hidden="true">*</span>
-              </label>
-
-              <input id="padel-email" name="email" type="email" autocomplete="email" maxlength="254" required />
-            </div>
-
-            <div class="padel-game__field">
-              <label for="padel-message">
-                Något du vill säga innan matchen?
-                <span class="padel-game__optional">
-                  Valfritt
-                </span>
-              </label>
-
-              <textarea id="padel-message" name="message" rows="3" maxlength="500"
-                placeholder="Trash talk, matchförslag eller en riktigt bra ursäkt…"></textarea>
-            </div>
-
-            <div class="padel-game__honeypot" aria-hidden="true">
-              <label for="padel-website">
-                Lämna detta fält tomt
-              </label>
-
-              <input id="padel-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
-            </div>
-
-            <input type="hidden" name="reactionTime" data-padel-form-time />
-
-            <input type="hidden" name="matchiRating" data-padel-form-rating />
-
-            <button class="padel-game__submit" type="submit" data-fs-submit-btn>
-              Skicka utmaningen
-              <span aria-hidden="true">→</span>
-            </button>
-          </form>
         </div>
       </div>
-    </dialog>
+    </section>
 
   </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__copyright">
+        © 2026 Alexander Johansson
+      </p>
+
+      <p class="site-footer__note">
+        Designat, byggt och debuggat. Pixel-perfect? Nästan.
+      </p>
+    </div>
+  </footer>
+
+  <dialog id="padel-game" class="padel-game" aria-labelledby="padel-game-title"
+    aria-describedby="padel-game-description">
+    <div class="padel-game__inner">
+      <form method="dialog" class="padel-game__close">
+        <button type="submit" class="padel-game__close-button" aria-label="Stäng Padel Challenge">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" />
+          </svg>
+        </button>
+      </form>
+
+      <!-- Intro -->
+      <div class="padel-game__screen padel-game__screen--intro" data-padel-screen="intro">
+        <p class="padel-game__eyebrow">
+          Padel Challenge
+        </p>
+
+        <h2 id="padel-game-title" class="padel-game__title">
+          Redo att testa reaktionen?
+        </h2>
+
+        <p id="padel-game-description" class="padel-game__intro">
+          Fem bollar. Så snabbt du kan. Vi ser om du
+          är redo för en riktig match.
+        </p>
+
+        <button class="padel-game__start" type="button" data-padel-start>
+          Starta utmaningen
+        </button>
+      </div>
+
+      <!-- Game -->
+      <div class="padel-game__screen padel-game__screen--game" data-padel-screen="game" hidden>
+        <div class="padel-game__status">
+          <p>
+            Träff
+            <span data-padel-current>1</span>
+            /
+            <span data-padel-total>5</span>
+          </p>
+        </div>
+
+        <div class="padel-game__arena" data-padel-arena>
+          <button class="padel-game__ball" type="button" data-padel-ball aria-label="Träffa padelbollen"
+            hidden></button>
+        </div>
+
+        <p class="visually-hidden" aria-live="polite" data-padel-status></p>
+      </div>
+
+      <!-- Result -->
+      <div class="padel-game__screen padel-game__screen--result" data-padel-screen="result" hidden>
+        <p class="padel-game__eyebrow">
+          Resultat
+        </p>
+
+        <p class="padel-game__result-time">
+          <span data-padel-result>0,00</span>
+          <span>s</span>
+        </p>
+
+        <h2 class="padel-game__result-title" data-padel-result-title>
+          Okej… det där var faktiskt bra.
+        </h2>
+
+        <p class="padel-game__result-text" data-padel-result-text>
+          Min högst ovetenskapliga bedömning: MATCHi 6/10.
+        </p>
+
+        <p class="padel-game__result-challenge">
+          Vågar du utmana mig på riktigt?
+        </p>
+
+        <div class="padel-game__actions">
+          <button class="padel-game__restart" type="button" data-padel-restart>
+            Kör igen
+          </button>
+
+          <button class="padel-game__challenge-link" type="button" data-padel-challenge-open>
+            Utmana Alex
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Challenge form -->
+      <div class="padel-game__screen padel-game__screen--challenge" data-padel-screen="challenge" hidden>
+        <p class="padel-game__eyebrow">
+          Padel Challenge
+        </p>
+
+        <h2 class="padel-game__result-title">
+          Är du säker?
+        </h2>
+
+        <p class="padel-game__challenge-description">
+          Lämna dina uppgifter så skickas utmaningen direkt till Alex.
+        </p>
+
+        <div class="padel-game__form-success" data-fs-success role="status" aria-live="polite" hidden>
+          Utmaningen är skickad. Alex har nu två alternativ:
+          svara eller börja träna.
+        </div>
+
+        <div class="padel-game__form-error" data-fs-error role="alert" hidden></div>
+
+        <form id="padel-challenge-form" class="padel-game__form">
+          <div class="padel-game__field">
+            <label for="padel-name">
+              Namn
+              <span class="padel-game__required" aria-hidden="true">*</span>
+            </label>
+
+            <input id="padel-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" required />
+          </div>
+
+          <div class="padel-game__field">
+            <label for="padel-email">
+              E-post
+              <span class="padel-game__required" aria-hidden="true">*</span>
+            </label>
+
+            <input id="padel-email" name="email" type="email" autocomplete="email" maxlength="254" required />
+          </div>
+
+          <div class="padel-game__field">
+            <label for="padel-message">
+              Något du vill säga innan matchen?
+              <span class="padel-game__optional">
+                Valfritt
+              </span>
+            </label>
+
+            <textarea id="padel-message" name="message" rows="3" maxlength="500"
+              placeholder="Trash talk, matchförslag eller en riktigt bra ursäkt…"></textarea>
+          </div>
+
+          <div class="padel-game__honeypot" aria-hidden="true">
+            <label for="padel-website">
+              Lämna detta fält tomt
+            </label>
+
+            <input id="padel-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <input type="hidden" name="reactionTime" data-padel-form-time />
+
+          <input type="hidden" name="matchiRating" data-padel-form-rating />
+
+          <button class="padel-game__submit" type="submit" data-fs-submit-btn>
+            Skicka utmaningen
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </dialog>
 
   <script type="module" src="/src/main.ts"></script>
 </body>
