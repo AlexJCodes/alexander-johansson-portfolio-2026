@@ -143,6 +143,7 @@
 @media (max-width: 39.99rem) {
 	.padel-game__screen--challenge {
 		justify-content: flex-start;
+        overflow-y: auto;
 	}
 
 	.padel-game__form {
