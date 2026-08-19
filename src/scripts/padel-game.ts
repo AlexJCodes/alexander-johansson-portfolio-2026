@@ -299,6 +299,7 @@ export const initPadelGame = () => {
 
 	openButton.addEventListener("click", () => {
 		dialog.showModal();
+		document.body.classList.add("padel-game-open");
 	});
 
 	startButton.addEventListener("click", startGame);
@@ -306,5 +307,8 @@ export const initPadelGame = () => {
 	ball.addEventListener("click", hitBall);
 	challengeButton.addEventListener("click", showChallenge);
 
-	dialog.addEventListener("close", resetGame);
+	dialog.addEventListener("close", () => {
+		document.body.classList.remove("padel-game-open");
+		resetGame();
+	});
 };
