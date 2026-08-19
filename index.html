@@ -39,6 +39,7 @@
         <ul class="site-nav__list">
           <li><a href="#projekt">Projekt</a></li>
           <li><a href="#om">Om mig</a></li>
+          <li><a href="#kompetens">Kompetens</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
           <li>
             <a href="/documents/alexander-johansson-cv.pdf" target="_blank" rel="noopener">
@@ -83,6 +84,9 @@
         <ul class="mobile-nav__list">
           <li><a href="#projekt">Projekt</a></li>
           <li><a href="#om">Om mig</a></li>
+          <li>
+            <a href="#kompetens">Kompetens</a>
+          </li>
           <li><a href="#kontakt">Kontakt</a></li>
           <li>
             <a href="%BASE_URL%documents/alexander-johansson-cv.pdf" target="_blank" rel="noopener">
@@ -203,6 +207,145 @@
         </div>
       </div>
     </section>
+
+    <section id="kompetens" class="skills section" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="skills__header">
+          <p class="skills__eyebrow">Kompetens</p>
+
+          <h2 id="skills-title" class="skills__title">
+            Det jag jobbar med.
+          </h2>
+        </div>
+
+        <div class="skills__grid">
+          <div class="skills__group">
+            <h3>Frontend</h3>
+
+            <ul>
+              <li>HTML</li>
+              <li>CSS / SCSS</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>Vite</li>
+              <li>Komponentarkitektur</li>
+            </ul>
+          </div>
+
+          <div class="skills__group">
+            <h3>Backend & data</h3>
+
+            <ul>
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>REST API</li>
+              <li>MySQL</li>
+              <li>Databasmodellering</li>
+            </ul>
+
+            <div class="skills__related-project">
+              <p class="skills__related-label">Relaterat projekt</p>
+
+              <a class="skills__project-link" href="https://github.com/AlexJCodes/product-catalog-api" target="_blank"
+                rel="noopener">
+                Product Catalog API
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="skills__group">
+            <h3>Design & kvalitet</h3>
+
+            <ul>
+              <li>Figma</li>
+              <li>UX-principer</li>
+              <li>Responsiv design</li>
+              <li>Tillgänglighet / WCAG</li>
+              <li>AI-assisterad utveckling</li>
+              <li>Git & GitHub</li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="personligt" class="personal section" aria-labelledby="personal-title">
+      <div class="container">
+        <header class="personal__header">
+          <p class="personal__eyebrow">Utanför koden</p>
+
+          <h2 id="personal-title" class="personal__title">
+            Det som laddar batterierna
+          </h2>
+        </header>
+
+        <div class="personal__grid">
+          <!-- Padel -->
+          <article class="personal-card personal-card--video-reveal">
+            <div class="personal-card__media">
+              <img class="personal-card__image" src="/src/assets/images/personal/padel-photo.webp"
+                alt="Bollkorg med ett rack liggandes uppepå i en padelbana" width="1200" height="900" loading="lazy" />
+
+              <video class="personal-card__video" muted loop playsinline preload="metadata" aria-hidden="true">
+                <source src="/src/assets/videos/padel-video.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            <div class="personal-card__content">
+              <p class="personal-card__label">Padel</p>
+
+              <p class="personal-card__description">
+                Spelar oftare än jag borde. Om du besegrar mig
+                bjuder jag på fika.
+              </p>
+            </div>
+          </article>
+
+          <!-- Miles With Alex -->
+          <article class="personal-card">
+            <div class="personal-card__media">
+              <video class="personal-card__video" muted loop playsinline preload="metadata"
+                poster="/src/assets/images/personal/miles-with-alex-photo.webp" aria-hidden="true">
+                <source src="/src/assets/videos/miles-with-alex-video.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            <div class="personal-card__content">
+              <p class="personal-card__label">Miles With Alex</p>
+
+              <p class="personal-card__description">
+                Mitt motorcykel- och reseprojekt. Berättardriven
+                dokumentation av livet på två hjul.
+              </p>
+            </div>
+          </article>
+
+          <!-- Resor -->
+          <article class="personal-card personal-card--video-reveal">
+            <div class="personal-card__media">
+              <img class="personal-card__image" src="/src/assets/images/personal/travel-photo.webp"
+                alt="Drönarvy över bergslandskap i Kina" width="1200" height="900" loading="lazy" />
+
+              <video class="personal-card__video" muted loop playsinline preload="metadata" aria-hidden="true">
+                <source src="/src/assets/videos/travel-video.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            <div class="personal-card__content">
+              <p class="personal-card__label">Resor</p>
+
+              <p class="personal-card__description">
+                Nya platser ger nya perspektiv. Bra för designtänket,
+                dåligt för plånboken.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <script type="module" src="/src/main.ts"></script>
