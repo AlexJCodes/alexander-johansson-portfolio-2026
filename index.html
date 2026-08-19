@@ -1,24 +1,24 @@
-<!DOCTYPE html>
 <html lang="sv">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Alexander Johansson | Frontend-utvecklare</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" />
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap">
 
   <!-- Apply saved/system theme before rendering to prevent a color flash. -->
   <script>
-    const savedTheme = localStorage.getItem('theme')
-    const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const savedTheme = localStorage.getItem("theme")
+    const prefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
 
-    if (savedTheme === 'dark' || (!savedTheme && prefersDarkTheme)) {
-      document.documentElement.dataset.theme = 'dark'
+    if (savedTheme === "dark" || (!savedTheme && prefersDarkTheme)) {
+      document.documentElement.dataset.theme = "dark"
     }
   </script>
 </head>
@@ -37,12 +37,24 @@
 
       <nav class="site-nav" aria-label="Huvudnavigation">
         <ul class="site-nav__list">
-          <li><a href="#projekt">Projekt</a></li>
-          <li><a href="#om">Om mig</a></li>
-          <li><a href="#kompetens">Kompetens</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
           <li>
-            <a href="/documents/alexander-johansson-cv.pdf" target="_blank" rel="noopener">
+            <a href="#projekt">Projekt</a>
+          </li>
+
+          <li>
+            <a href="#om">Om mig</a>
+          </li>
+
+          <li>
+            <a href="#kompetens">Kompetens</a>
+          </li>
+
+          <li>
+            <a href="#kontakt">Kontakt</a>
+          </li>
+
+          <li>
+            <a href="%BASE_URL%documents/alexander-johansson-cv.pdf" target="_blank" rel="noopener">
               CV
             </a>
           </li>
@@ -50,7 +62,6 @@
       </nav>
 
       <div class="site-header__actions">
-
         <button type="button" class="theme-toggle" aria-label="Byt till mörkt tema">
           <svg class="theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="1.75" aria-hidden="true">
@@ -69,6 +80,7 @@
           <svg class="menu-toggle__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="1.5" aria-hidden="true">
             <path class="menu-toggle__open-icon" d="M3 6h18M3 12h18M3 18h18" />
+
             <path class="menu-toggle__close-icon" d="M6 6l12 12M18 6L6 18" />
           </svg>
 
@@ -82,12 +94,22 @@
     <nav id="mobile-navigation" class="mobile-nav" aria-label="Mobilnavigation" hidden>
       <div class="container mobile-nav__inner">
         <ul class="mobile-nav__list">
-          <li><a href="#projekt">Projekt</a></li>
-          <li><a href="#om">Om mig</a></li>
+          <li>
+            <a href="#projekt">Projekt</a>
+          </li>
+
+          <li>
+            <a href="#om">Om mig</a>
+          </li>
+
           <li>
             <a href="#kompetens">Kompetens</a>
           </li>
-          <li><a href="#kontakt">Kontakt</a></li>
+
+          <li>
+            <a href="#kontakt">Kontakt</a>
+          </li>
+
           <li>
             <a href="%BASE_URL%documents/alexander-johansson-cv.pdf" target="_blank" rel="noopener">
               CV
@@ -99,6 +121,7 @@
   </header>
 
   <main id="main-content">
+    <!-- Hero -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero__inner">
         <div class="hero__content">
@@ -112,7 +135,8 @@
           </p>
 
           <p class="hero__intro">
-            Tio år i säljbranschen lärde mig att förstå människor. Nu tar jag med mig det perspektivet in i frontend.
+            Tio år i säljbranschen lärde mig att förstå människor.
+            Nu tar jag med mig det perspektivet in i frontend.
           </p>
 
           <div class="hero__actions">
@@ -125,7 +149,7 @@
               </svg>
             </a>
 
-            <a class="button button--secondary" href="/documents/alexander-johansson-cv.pdf" target="_blank"
+            <a class="button button--secondary" href="%BASE_URL%documents/alexander-johansson-cv.pdf" target="_blank"
               rel="noopener">
               Visa CV
             </a>
@@ -134,17 +158,20 @@
 
         <div class="hero__portrait">
           <img src="/src/assets/images/alexander-johansson-hero.webp"
-            alt="Porträtt av Alexander Johansson with a cup of coffee" width="800" height="1000" fetchpriority="high" />
+            alt="Porträtt av Alexander Johansson med en kaffekopp" width="800" height="1000" fetchpriority="high">
 
           <span class="hero__accent" aria-hidden="true"></span>
         </div>
       </div>
     </section>
 
+    <!-- Projects -->
     <section id="projekt" class="projects section" aria-labelledby="projects-title">
       <div class="container projects__header">
         <div>
-          <p class="projects__eyebrow">Utvalda projekt</p>
+          <p class="projects__eyebrow">
+            Utvalda projekt
+          </p>
 
           <h2 id="projects-title" class="projects__title">
             Vad jag byggt
@@ -175,10 +202,13 @@
       </div>
     </section>
 
+    <!-- About -->
     <section id="om" class="about section" aria-labelledby="about-title">
       <div class="container about__inner">
         <div class="about__heading">
-          <p class="about__eyebrow">Om mig</p>
+          <p class="about__eyebrow">
+            Om mig
+          </p>
 
           <h2 id="about-title" class="about__title">
             Från säljgolvet
@@ -208,10 +238,13 @@
       </div>
     </section>
 
+    <!-- Skills -->
     <section id="kompetens" class="skills section" aria-labelledby="skills-title">
       <div class="container">
         <div class="skills__header">
-          <p class="skills__eyebrow">Kompetens</p>
+          <p class="skills__eyebrow">
+            Kompetens
+          </p>
 
           <h2 id="skills-title" class="skills__title">
             Det jag jobbar med.
@@ -244,7 +277,9 @@
             </ul>
 
             <div class="skills__related-project">
-              <p class="skills__related-label">Relaterat projekt</p>
+              <p class="skills__related-label">
+                Relaterat projekt
+              </p>
 
               <a class="skills__project-link" href="https://github.com/AlexJCodes/product-catalog-api" target="_blank"
                 rel="noopener">
@@ -265,16 +300,18 @@
               <li>AI-assisterad utveckling</li>
               <li>Git & GitHub</li>
             </ul>
-
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Personal -->
     <section id="personligt" class="personal section" aria-labelledby="personal-title">
       <div class="container">
         <header class="personal__header">
-          <p class="personal__eyebrow">Utanför koden</p>
+          <p class="personal__eyebrow">
+            Utanför koden
+          </p>
 
           <h2 id="personal-title" class="personal__title">
             Det som laddar batterierna
@@ -286,22 +323,27 @@
           <article class="personal-card personal-card--video-reveal">
             <div class="personal-card__media">
               <img class="personal-card__image" src="/src/assets/images/personal/padel-photo.webp"
-                alt="Bollkorg med ett rack liggandes uppepå i en padelbana" width="1200" height="900" loading="lazy" />
+                alt="Bollkorg med ett rack liggande på en padelbana" width="1200" height="900" loading="lazy">
 
               <video class="personal-card__video" muted loop playsinline preload="metadata" aria-hidden="true">
-                <source src="/src/assets/videos/padel-video.mp4" type="video/mp4" />
+                <source src="/src/assets/videos/padel-video.mp4" type="video/mp4">
               </video>
             </div>
 
             <div class="personal-card__content">
-              <p class="personal-card__label">Padel</p>
+              <p class="personal-card__label">
+                Padel
+              </p>
 
               <p class="personal-card__description">
-                Spelar oftare än jag borde. Om du besegrar mig bjuder jag på fika.
+                Spelar oftare än jag borde. Om du besegrar mig
+                bjuder jag på fika.
               </p>
 
               <div class="personal-card__challenge-copy">
-                <p>Är du en värdig motståndare? Testa din reaktion.</p>
+                <p>
+                  Är du en värdig motståndare? Testa din reaktion.
+                </p>
 
                 <button class="personal-card__challenge" type="button" data-padel-game-open>
                   Testa här
@@ -316,12 +358,14 @@
             <div class="personal-card__media">
               <video class="personal-card__video" muted loop playsinline preload="metadata"
                 poster="/src/assets/images/personal/miles-with-alex-photo.webp" aria-hidden="true">
-                <source src="/src/assets/videos/miles-with-alex-video.mp4" type="video/mp4" />
+                <source src="/src/assets/videos/miles-with-alex-video.mp4" type="video/mp4">
               </video>
             </div>
 
             <div class="personal-card__content">
-              <p class="personal-card__label">Miles With Alex</p>
+              <p class="personal-card__label">
+                Miles With Alex
+              </p>
 
               <p class="personal-card__description">
                 Mitt motorcykel- och reseprojekt. Berättardriven
@@ -330,19 +374,21 @@
             </div>
           </article>
 
-          <!-- Resor -->
+          <!-- Travel -->
           <article class="personal-card personal-card--video-reveal">
             <div class="personal-card__media">
               <img class="personal-card__image" src="/src/assets/images/personal/travel-photo.webp"
-                alt="Drönarvy över bergslandskap i Kina" width="1200" height="900" loading="lazy" />
+                alt="Drönarvy över bergslandskap i Kina" width="1200" height="900" loading="lazy">
 
               <video class="personal-card__video" muted loop playsinline preload="metadata" aria-hidden="true">
-                <source src="/src/assets/videos/travel-video.mp4" type="video/mp4" />
+                <source src="/src/assets/videos/travel-video.mp4" type="video/mp4">
               </video>
             </div>
 
             <div class="personal-card__content">
-              <p class="personal-card__label">Resor</p>
+              <p class="personal-card__label">
+                Resor
+              </p>
 
               <p class="personal-card__description">
                 Nya platser ger nya perspektiv. Bra för designtänket,
@@ -354,6 +400,7 @@
       </div>
     </section>
 
+    <!-- Contact -->
     <section id="kontakt" class="contact section" aria-labelledby="contact-title">
       <div class="container">
         <div class="contact__content">
@@ -371,7 +418,7 @@
           </p>
 
           <div class="contact__actions">
-            <a class="contact__button contact__button--primary" href="mailto:DIN-EMAIL">
+            <a class="contact__button contact__button--primary" href="mailto:alexander.johansson8910@gmail.com">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 aria-hidden="true">
                 <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -381,7 +428,8 @@
               Skicka mejl
             </a>
 
-            <a class="contact__button" href="DIN-LINKEDIN" target="_blank" rel="noopener noreferrer">
+            <a class="contact__button" href="https://www.linkedin.com/in/alexander-johansson-88a568208/" target="_blank"
+              rel="noopener noreferrer">
               LinkedIn
             </a>
 
@@ -389,7 +437,8 @@
               GitHub
             </a>
 
-            <a class="contact__button contact__button--download" href="/documents/alexander-johansson-cv.pdf" download>
+            <a class="contact__button contact__button--download" href="%BASE_URL%documents/alexander-johansson-cv.pdf"
+              download>
               Ladda ned CV
 
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -403,9 +452,9 @@
         </div>
       </div>
     </section>
-
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container site-footer__inner">
       <p class="site-footer__copyright">
@@ -418,6 +467,7 @@
     </div>
   </footer>
 
+  <!-- Padel Challenge -->
   <dialog id="padel-game" class="padel-game" aria-labelledby="padel-game-title"
     aria-describedby="padel-game-description">
     <div class="padel-game__inner">
@@ -532,7 +582,7 @@
               <span class="padel-game__required" aria-hidden="true">*</span>
             </label>
 
-            <input id="padel-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" required />
+            <input id="padel-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" required>
           </div>
 
           <div class="padel-game__field">
@@ -541,7 +591,7 @@
               <span class="padel-game__required" aria-hidden="true">*</span>
             </label>
 
-            <input id="padel-email" name="email" type="email" autocomplete="email" maxlength="254" required />
+            <input id="padel-email" name="email" type="email" autocomplete="email" maxlength="254" required>
           </div>
 
           <div class="padel-game__field">
@@ -561,12 +611,12 @@
               Lämna detta fält tomt
             </label>
 
-            <input id="padel-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+            <input id="padel-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
           </div>
 
-          <input type="hidden" name="reactionTime" data-padel-form-time />
+          <input type="hidden" name="reactionTime" data-padel-form-time>
 
-          <input type="hidden" name="matchiRating" data-padel-form-rating />
+          <input type="hidden" name="matchiRating" data-padel-form-rating>
 
           <button class="padel-game__submit" type="submit" data-fs-submit-btn>
             Skicka utmaningen
