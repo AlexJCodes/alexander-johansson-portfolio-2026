@@ -1,5 +1,7 @@
 import { defineConfig } from "vite";
 
-export default defineConfig(({ command }) => ({
-	base: command === "serve" ? "/" : "/alexander-johansson-portfolio-2026/",
+const productionBase = "/alexander-johansson-portfolio-2026/";
+
+export default defineConfig(({ command, isPreview }) => ({
+	base: command === "serve" && isPreview !== true ? "/" : productionBase,
 }));
