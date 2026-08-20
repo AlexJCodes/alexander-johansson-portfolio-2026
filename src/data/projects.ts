@@ -63,7 +63,7 @@ export const featuredProjects: Project[] = [
 		githubUrl:
 			"https://github.com/Medieinstitutet/fed25d-grafiska-verktyg-bleed-trim",
 		liveUrl:
-			"https://medieinstitutet.github.io/fed25d-grafiska-verktyg-bleed-trim/",
+			"https://medieinstitutet.github.io/fed25d-grafiska-verktyg-individuell-AlexJCodes/",
 		imageAlt: "Omslagsbild för Sir Vector",
 		subtitle: "Visuellt frontendprojekt",
 	},
