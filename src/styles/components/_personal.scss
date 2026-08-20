@@ -154,10 +154,13 @@
 
 	.personal-card:last-child {
 		grid-column: 1 / -1;
+
+		width: calc((100% - var(--space-5)) / 2);
+		justify-self: center;
 	}
 
-	.personal-card:last-child .personal-card__media {
-		aspect-ratio: 2 / 1;
+	.personal-card__media {
+		aspect-ratio: 4 / 3;
 	}
 }
 
@@ -170,10 +173,9 @@
 
 	.personal-card:last-child {
 		grid-column: auto;
-	}
 
-	.personal-card:last-child .personal-card__media {
-		aspect-ratio: 4 / 3;
+		width: auto;
+		justify-self: stretch;
 	}
 }
 
