@@ -64,12 +64,14 @@
 }
 
 .personal-card__label {
-	margin-bottom: var(--space-2);
+	margin: 0 0 var(--space-2);
 
 	color: var(--color-text-muted);
 
+	font-family: var(--font-body);
 	font-size: var(--font-size-small);
 	font-weight: 600;
+	line-height: 1.2;
 	letter-spacing: var(--letter-spacing-label);
 	text-transform: uppercase;
 }
