@@ -3,6 +3,7 @@ import donutShopCover from "../assets/images/projects/donut-shop-project.webp";
 import moneyMoodCover from "../assets/images/projects/moneymood-project.webp";
 import sirVectorCover from "../assets/images/projects/sir-vector-project.webp";
 import templeOfFiveCover from "../assets/images/projects/temple-of-five-project.webp";
+import whichDevHeroCover from "../assets/images/projects/which-dev-hero-project.webp";
 
 export type Project = {
 	id: string;
@@ -17,6 +18,18 @@ export type Project = {
 };
 
 export const featuredProjects: Project[] = [
+	{
+		id: "which-dev-hero",
+		title: "Which Dev Hero Are You?",
+		description:
+			"Ett interaktivt fullstack-quiz där användaren svarar på frågor och matchas med en utvecklarprofil, med egen backend, databas, statistik och kommentarer.",
+		technologies: ["TypeScript", "Vite", "Node.js", "Express", "MySQL"],
+		image: whichDevHeroCover,
+		githubUrl: "https://github.com/AlexJCodes/which-dev-hero-are-you-api",
+		liveUrl: "https://which-dev-hero.vercel.app/",
+		imageAlt: "Omslagsbild för Which Dev Hero Are You?",
+		subtitle: "Fullstack-quiz för utvecklare",
+	},
 	{
 		id: "temple-of-five",
 		title: "The Temple of Five",
